@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "483058656029",
+    "firebase_url": "https://paco-prod-default-rtdb.firebaseio.com",
+    "project_id": "paco-prod",
+    "storage_bucket": "paco-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483058656029:android:02f5cd74da166c0208f7f4",
+        "android_client_info": {
+          "package_name": "com.desarrolloeficaz.paco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483058656029-sinifr7j3dp0vit4q4dlgrn5qmr8ke2k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAexd6TLDBohekFj_4IjnRIEnQp7bGis-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483058656029-sinifr7j3dp0vit4q4dlgrn5qmr8ke2k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "483058656029-pedog47lecfofq3e417n1fb0po4n6r3u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.desarrolloeficaz.paco"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

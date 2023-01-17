@@ -1,0 +1,325 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" *ngIf="!isLogin">
+      <ion-back-button defaultHref="/tabs/home" text="Atrás" class="ion-text-capitalize"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="title">Actualiza tus datos</ion-title>
+
+    <ion-buttons slot="end" *ngIf="!isLogin">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" src="assets/img/HMenu-outline.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content [scrollEvents]="true">
+
+  <ion-slides class="mainSlide finalRecord" #slidePrincipal>
+
+    <ion-slide>
+      <ion-grid id="dataNeig">
+        <form [formGroup]="neighbourForm">
+
+          <ion-row class="top-30">
+            <ion-col size="12" class="ion-text-center">
+              <img src="assets/img/noImage.png" *ngIf="!image" class="img-avatar">
+              <img [src]="image" *ngIf="image" id="pictureProfile" class="img-avatar">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="block" color="secondary" class="uploadPicture" (click)="camera()">
+                <ion-icon slot="start" name="camera"></ion-icon>
+                Cámara
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="block" color="secondary" class="uploadPicture" (click)="librery()">
+                <ion-icon slot="start" name="images"></ion-icon>
+                Galería
+              </ion-button>
+              <input type="file" #filePicker (change)="onFileChoose($event)" />
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-list>
+
+                <ion-item lines="none">
+                  <ion-label position="stacked" class="dataNeigh">Escriba su(s) nombre(s) *</ion-label>
+                  <ion-input class="inputs" name="firstName" formControlName="nombres" type="text"></ion-input>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label position="stacked" class="dataNeigh">Escriba sus apellidos *</ion-label>
+                  <ion-input class="inputs" name="lastName" formControlName="apellidos" type="text"></ion-input>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label position="stacked" class="dataNeigh">¿Cuál es su número telefónico? *</ion-label>
+                  <ion-input class="inputs" name="number" formControlName="numero_celular" type="tel" max="10">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label position="floating" class="dataNeigh">Elija el tipo de identificación *</ion-label>
+                  <ion-select class="selectdAndDateTime" name="typeDocument" formControlName="tipo_doc"
+                    placeholder="opciones" ok-text="aceptar" cancel-text="cancelar">
+                    <ion-select-option value="cc">
+                      Cédula Ciudadanía
+                    </ion-select-option>
+                    <ion-select-option value="pas">
+                      Pasaporte
+                    </ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label position="stacked" class="dataNeigh">¿Cuál es su número de identificación? *</ion-label>
+                  <ion-input class="inputs" name="numberDocument" formControlName="identificacion" type="number">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label position="floating" class="dataNeigh">Elija su género *</ion-label>
+                  <ion-select class="selectdAndDateTime" name="gener" formControlName="sexo" placeholder="opciones"
+                    ok-text="aceptar" cancel-text="cancelar">
+                    <ion-select-option value="H">
+                      Hombre
+                    </ion-select-option>
+                    <ion-select-option value="M">
+                      Mujer
+                    </ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label position="floating" class="dataNeigh">Elija su fecha de nacimiento *</ion-label>
+                  <ion-datetime class="selectdAndDateTime" placeholder=" DD/MM/AAAA" name="birthday"
+                    formControlName="fecha_nacimiento" display-format="DD  MMM YYYY" cancelText="cancelar"
+                    doneText="aceptar" monthShortNames="ene, feb, mar, abr, may, jun, jul, ago, sep, oct, nov, dic">
+                  </ion-datetime>
+                </ion-item>
+
+              </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-button class="btnChangeForm" (click)="nextSlide()">
+                Siguiente
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+        </form>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid id="propertyNeig">
+        <form [formGroup]="propertyForm">
+
+          <ion-row>
+            <ion-col>
+              <ion-list>
+
+                <ion-item lines="none">
+                  <ion-label position="stacked" class="titleInputs">Nomenclatura del inmueble</ion-label>
+                  <ion-input class="inputs" name="numProperty" formControlName="num_inmueble" type="text" disabled>
+                  </ion-input>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label position="stacked" class="titleInputs">Número fijo</ion-label>
+                  <ion-input class="inputs" name="fixedNumber" formControlName="numero_fijo" type="text">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label position="stacked" class="titleInputs">Escribe su coeficiente</ion-label>
+                  <ion-input class="inputs" name="coefficient" formControlName="coeficiente" type="text"></ion-input>
+                </ion-item>
+
+
+                <ion-item-group>
+
+                  <div formArrayName="cuartosUtiles" class="placas">
+                    <div *ngFor="let item of cuartosUtiles.controls; let pointIndex=index" [formGroupName]="pointIndex">
+                      <ion-item lines="none">
+                        <ion-label class="titleArray">Cuartos útiles</ion-label>
+                        <ion-button slot="end" color="danger" class="btnTrash" class="btnTrash"
+                          (click)="presentAlert('cuartoUtil', pointIndex, item.value)">
+                          <ion-icon slot="icon-only" name="trash-sharp"></ion-icon>
+                        </ion-button>
+                      </ion-item>
+
+                      <ion-item lines="none">
+                        <ion-label position="stacked" class="titleInputs">
+                          Escribe la nomenclatura del cuarto útil
+                        </ion-label>
+                        <ion-input class="inputs" name="userfulRoom" formControlName='nomenclaturaCuartoUtil'
+                          type="text" placeholder="502">
+                        </ion-input>
+                      </ion-item>
+                    </div>
+                    <ion-item detail="false" lines="none">
+                      <ion-button class="btnAddItem" color="secondary" (click)="this.addCuartosUtiles()">
+                        <ion-icon slot="icon-only" name="add-sharp"></ion-icon>
+                      </ion-button>
+                      <ion-label>
+                        ¿Tiene otro cuarto útil? Agrégalo
+                      </ion-label>
+                    </ion-item>
+                  </div>
+                </ion-item-group>
+
+                <ion-item-group>
+
+                  <div formArrayName="vehiculos" class="placas">
+                    <div *ngFor="let item of vehiculo.controls; let pointIndex=index" [formGroupName]="pointIndex">
+                      <ion-item lines="none">
+                        <ion-label class="titleArray">Vehículos</ion-label>
+                        <ion-button slot="end" color="danger" class="btnTrash"
+                          (click)="presentAlert('vehiculo', pointIndex, item.value)">
+                          <ion-icon slot="icon-only" name="trash-sharp"></ion-icon>
+                        </ion-button>
+                      </ion-item>
+
+                      <ion-item lines="none">
+                        <ion-label position="floating">Elige el tipo de vehículo</ion-label>
+                        <ion-select class="selectdAndDateTime" name="typeVehicle" formControlName='tipoVehiculo'
+                          placeholder="opciones" ok-text="aceptar" cancel-text="cancelar">
+                          <ion-select-option value="carro">
+                            Carro
+                          </ion-select-option>
+                          <ion-select-option value="moto">
+                            Moto
+                          </ion-select-option>
+                          <ion-select-option value="bicicleta">
+                            Bicicleta
+                          </ion-select-option>
+                        </ion-select>
+                      </ion-item>
+
+                      <ion-item lines="none">
+                        <ion-label position="stacked" class="titleInputs">Describe el vehículo (marca, color y placa)
+                        </ion-label>
+                        <ion-input class="inputs" name="descVehicle" formControlName='descripcion' type="text"
+                          placeholder="Audi / Fucsia / 666 YKE">
+                        </ion-input>
+                      </ion-item>
+                    </div>
+                    <ion-item detail="false" lines="none">
+                      <ion-button class="btnAddItem" color="secondary" (click)="this.addvehiculo()">
+                        <ion-icon slot="icon-only" name="add-sharp"></ion-icon>
+                      </ion-button>
+                      <ion-label>
+                        ¿Tiene otro vehículo? Agrégalo
+                      </ion-label>
+                    </ion-item>
+                  </div>
+                </ion-item-group>
+
+
+                <ion-item-group>
+
+                  <div formArrayName="celdas" class="placas">
+                    <div *ngFor="let item of celda.controls; let pointIndex=index" [formGroupName]="pointIndex">
+                      <ion-item lines="none">
+                        <ion-label class="titleArray">Parqueaderos</ion-label>
+                        <ion-button slot="end" color="danger" class="btnTrash"
+                          (click)="presentAlert('parqueadero', pointIndex, item.value)">
+                          <ion-icon slot="icon-only" name="trash-sharp"></ion-icon>
+                        </ion-button>
+                      </ion-item>
+
+                      <ion-item lines="none">
+                        <ion-label position="stacked" class="titleInputs">Número del parqueadero</ion-label>
+                        <ion-input class="inputs" name="descCelda" formControlName='numero' type="text"
+                          placeholder="PAR-1">
+                        </ion-input>
+                      </ion-item>
+                    </div>
+                    <ion-item detail="false" lines="none">
+                      <ion-button class="btnAddItem" color="secondary" (click)="this.addcelda()">
+                        <ion-icon slot="icon-only" name="add-sharp"></ion-icon>
+                      </ion-button>
+                      <ion-label>
+                        ¿Tiene otro parqueadero? Agrégalo
+                      </ion-label>
+                    </ion-item>
+                  </div>
+                </ion-item-group>
+
+                <ion-item-group>
+
+                  <div formArrayName="mascotas" class="placas">
+                    <div *ngFor="let item of mascota.controls; let pointIndex=index" [formGroupName]="pointIndex">
+
+                      <ion-item lines="none">
+                        <ion-label class="titleArray">Mascotas</ion-label>
+                        <ion-button slot="end" color="danger" class="btnTrash"
+                          (click)="presentAlert('mascota', pointIndex, item.value)">
+                          <ion-icon slot="icon-only" name="trash-sharp"></ion-icon>
+                        </ion-button>
+                      </ion-item>
+
+                      <ion-item lines="none">
+                        <ion-label position="stacked" class="titleInputs">Tipo de mascota</ion-label>
+                        <ion-input class="inputs" name="typePet" formControlName='tipoMascota' type="text"
+                          placeholder="Perro">
+                        </ion-input>
+                      </ion-item>
+
+                      <ion-item lines="none">
+                        <ion-label position="stacked" class="titleInputs">Describe a la mascota (raza, color y sexo)
+                        </ion-label>
+                        <ion-input class="inputs" name="descPet" formControlName='descripcion' type="text"
+                          placeholder="Labrador / Dorado / Macho">
+                        </ion-input>
+                      </ion-item>
+                    </div>
+                    <ion-item detail="false" lines="none">
+                      <ion-button class="btnAddItem" color="secondary" (click)="this.addmascota()">
+                        <ion-icon slot="icon-only" name="add-sharp"></ion-icon>
+                      </ion-button>
+                      <ion-label>
+                        ¿Tiene otra mascota? Agrégala
+                      </ion-label>
+                    </ion-item>
+                  </div>
+                </ion-item-group>
+
+              </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="6">
+              <ion-button class="btnChangeForm" (click)="prevSlide()">
+                Atrás
+              </ion-button>
+            </ion-col>
+
+            <ion-col size="6">
+              <ion-button type="button" color="secondary" class="saveData" (click)="uploadPicture()"
+                [disabled]="this.neighbourForm.invalid || this.propertyForm.invalid">
+                Guardar
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+        </form>
+      </ion-grid>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

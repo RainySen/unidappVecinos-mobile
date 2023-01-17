@@ -1,0 +1,373 @@
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+.toolbarH1 {
+  --background: rgb(241, 239, 254);
+}
+
+.toolbarH1Final {
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  border-bottom: #ab9cf7 1.5px solid;
+  z-index: 20;
+}
+
+.toolbarH2 {
+  --background: rgb(241, 239, 254);
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  border-bottom: #ab9cf7 1.5px solid;
+  padding-bottom: 0.5vh;
+}
+
+.toolbarH2Final {
+  border-bottom: #ab9cf7 0px solid;
+  z-index: -2;
+}
+
+#logo {
+  width: 5.6rem;
+  position: relative;
+  left: 45%;
+}
+
+#avatarProfile {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  float: left;
+}
+
+.toolbarH2 h3 {
+  font-size: 1.2rem;
+}
+
+#nameUSer {
+  font-weight: bold;
+}
+
+.resetValuesCss {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+#firsTitle {
+  margin-top: 2rem !important;
+}
+
+.title {
+  margin-left: 1rem !important;
+  font-weight: bold;
+}
+
+.subTitle {
+  margin-left: 1rem !important;
+  font-size: 0.8rem !important;
+  margin-top: 8px !important;
+}
+
+.titleNavigate {
+  color: #48b5fb;
+  margin-right: 1rem !important;
+  margin-bottom: 1.5rem !important;
+  text-decoration: underline #48b5fb;
+  font-weight: bold;
+}
+
+#txtNotification {
+  margin-top: 1rem !important;
+}
+
+.cardBillboard {
+  height: 12rem;
+  width: 20rem;
+  position: relative;
+}
+
+.cardBillboard:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom right, rgba(0, 13, 61, 0.9) 20%, rgba(255, 255, 255, 0));
+}
+
+.cardBillboard .imgBillboard,
+.cardBillboardOne .imgBillboard,
+#avatarProfile img {
+  width: 100%;
+  height: auto;
+}
+
+@supports (object-fit: cover) {
+  .cardBillboard .imgBillboard,
+  .cardBillboardOne .imgBillboard,
+  #avatarProfile img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.cardBillboardOne {
+  height: 9rem;
+}
+
+.cardBillboardOne:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom right, rgba(0, 13, 61, 0.9) 20%, rgba(255, 255, 255, 0));
+}
+
+.dateBillboard {
+  position: absolute;
+  padding-left: 0.8rem;
+  top: 1rem;
+  right: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.dateBillboardOne {
+  position: absolute;
+  padding-left: 0.8rem;
+  top: 1rem;
+  right: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.titleBillboard {
+  position: absolute;
+  text-align: justify;
+  bottom: 1rem;
+  left: 0.3rem;
+  color: #ffffff;
+  font-weight: bold;
+  width: 17rem;
+}
+
+.titleBillboardOne {
+  position: absolute;
+  padding-left: 0.8rem;
+  bottom: 1rem;
+  left: 0.3rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.noBillboards {
+  color: #48b5fb;
+}
+
+.noBillboard {
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+}
+
+.gridNews {
+  margin-top: 1rem !important;
+}
+
+.cardNews {
+  height: 6rem;
+  width: 18rem;
+  border-radius: 1rem;
+}
+
+.cardNews:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.cardNewsOne {
+  height: 10rem;
+}
+
+.cardNewsOne:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.noNews {
+  color: #48b5fb;
+}
+
+.noNewsPrincipal {
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+}
+
+.dateNews {
+  float: right;
+  padding-right: 0.8rem;
+  padding-top: 0.6rem;
+  color: #ffffff;
+}
+
+.endDate {
+  position: absolute;
+  background: rgba(117, 201, 251, 0.5);
+  top: 0;
+  right: 0;
+  width: 4rem;
+  height: 6rem;
+}
+
+.endDateDay {
+  position: relative;
+  top: 16px;
+  left: 3px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.endDateMonth {
+  position: relative;
+  top: 15px;
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.endDateOne {
+  position: absolute;
+  background: rgba(117, 201, 251, 0.5);
+  padding-left: 12px;
+  top: 0;
+  right: 0;
+  width: 4rem;
+  height: 3.8rem;
+}
+
+.endDateDayOne {
+  position: relative;
+  top: 0px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000d3d;
+  margin: 0;
+}
+
+.endDateMonthOne {
+  position: relative;
+  top: -6px;
+  font-size: 1.3rem;
+  color: #000d3d;
+  margin: 0;
+}
+
+.titleNews {
+  position: absolute;
+  top: 18px;
+  left: 2px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: justify;
+  width: 11.3rem;
+  padding: 0 0.2rem 0 0.7rem;
+}
+
+.descriptionNews {
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  color: #ffffff;
+  width: 200px;
+  text-align: justify;
+}
+
+.descriptionNewsOne {
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  color: #000d3d;
+  width: 270px;
+  text-align: justify;
+}
+
+.firstCardNews:before {
+  background-color: #ffffff;
+}
+
+.firstCardNews .titleNews {
+  color: #3db5ff;
+}
+
+.firstCardNews .descriptionNews,
+.firstCardNews .endDate .endDateDay,
+.firstCardNews .endDate .endDateMonth {
+  color: #000d3d;
+}
+
+.secondCardNews:before {
+  background-color: #3db5ff;
+}
+
+.secondCardNews .titleNews {
+  color: #ffffff;
+}
+
+.secondCardNews .descriptionNews {
+  color: #ffffff;
+}
+
+.thirdCardNews:before {
+  background-color: #000d3d;
+}
+
+.thirdCardNews .titleNews {
+  color: #3db5ff;
+}
+
+.thirdCardNews .descriptionNews {
+  color: #ffffff;
+}
+
+#quantityNot {
+  color: #89d1ff !important;
+  font-size: 1rem;
+}
+
+.footer {
+  height: 70px !important;
+  --background: rgb(104, 104, 239);
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  z-index: 10;
+}
+
+.tabs {
+  --background: rgb(104, 239, 144);
+  height: 70px !important;
+  z-index: 20;
+}
+
+.thumbnailSkeleton {
+  position: relative;
+  height: 10rem;
+  width: 18rem;
+}

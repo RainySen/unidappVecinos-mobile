@@ -1,0 +1,78 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+*,
+ion-label {
+  font-family: Raleway !important;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.loading-login .loading-wrapper {
+  display: contents;
+}
+
+.loading-login .loading-wrapper .loading-content img {
+  width: 150px;
+}
+
+.inBuilding .popover-content {
+  font-family: "Raleway", sans-serif;
+  padding-left: 10px;
+}
+
+ion-picker .picker-wrapper .picker-toolbar .picker-toolbar-button button.picker-button {
+  font-family: "Raleway", sans-serif !important;
+  color: #48b5fb !important;
+  font-weight: bold !important;
+}
+
+ion-picker .picker-wrapper .picker-columns {
+  font-family: "Raleway", sans-serif !important;
+}
+
+ion-picker .picker-wrapper .picker-columns button.picker-opt-selected {
+  color: #48b5fb !important;
+}
+
+.alert-notification .alert-wrapper {
+  background: #7961f2;
+}
+
+.alert-notification .alert-head h2,
+.alert-notification .alert-message,
+.alert-notification .btn-notification {
+  color: #fff;
+  font-family: Raleway;
+}
+
+.alert-notification .alert-message img {
+  margin-top: 1.3rem;
+  margin-bottom: -1rem;
+}

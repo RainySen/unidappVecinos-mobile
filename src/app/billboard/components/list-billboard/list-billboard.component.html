@@ -1,0 +1,133 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home" text="Atrás" class="ion-text-capitalize">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-capitalize">Cartelera</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" src="assets/img/HMenu-outline.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid fixed class="resetValuesCss ion-padding-top" id="firsTitle" *ngIf="isData">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <h3 class="resetValuesCss title">
+          <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+        </h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss title subTitle">
+          <ion-skeleton-text animated style="width: 73%"></ion-skeleton-text>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of [1,1,1,1,1]">
+      <ion-col>
+        <ion-card>
+          <ion-card-header class="ion-padding ion-text-center">
+            <ion-thumbnail id="thumbnailSkeleton">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-card-title>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </ion-card-title>
+            <ion-card-subtitle>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </ion-card-subtitle>
+            <p>
+              <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row *ngIf="idDataBillboard">
+    <ion-col class="noBillboard">
+      <h4 class="ion-text-center noBillboards">
+        No te preocupes si no encuentras ninguna publicación en esta cartelera
+      </h4>
+      <h6 class="ion-text-center">
+        Podemos usar este tiempo valioso para meditar, amar a todos los seres vivos o verte los capitulos que te faltan
+        de la serie que te gusta.
+      </h6>
+      <ion-img src="./assets/img/noBillboards.png"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-grid fixed class="resetValuesCss ion-padding-top" id="firsTitle" *ngIf="billboards.length != 0">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <h1 class="resetValuesCss title">Cartelera</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss title subTitle">
+          Mira todo lo que tenemos preparado para ti.
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let billboard of finalBillboards" class="ion-padding-top animated fadeIn fast">
+      <ion-col class="cardsEvent">
+        <ion-card>
+          <ion-card-header class="ion-padding ion-text-center">
+            <!-- <ion-button class="iconShare" size="small" color="medium">
+                <ion-icon name="share-social-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button class="iconHeart" size="small" color="medium">
+                <ion-icon name="heart-outline" slot="icon-only"></ion-icon>
+              </ion-button> -->
+            <!-- <img [src]="billboard.images[0]" class="imgBillboard"> -->
+            <ion-img *ngIf="billboard.images.length > 0" [src]="billboard.images[0].image"></ion-img>
+            <ion-img *ngIf="billboard.images.length == 0" src="./assets/img/no_image.jpg"></ion-img>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-card-title>{{ billboard.title | truncate : limitTitle }}</ion-card-title>
+            <ion-card-subtitle>
+              <strong class="ion-text-capitalize">Publicada: </strong>{{ billboard.start_date | date }}
+            </ion-card-subtitle>
+            <p class="shortText" [innerHTML]="billboard.description | truncate : limitDesc">
+              <!-- {{ billboard.description | truncate : limit }} -->
+            </p>
+            <p class="resetValuesCss titleNavigate" (click)="viewDetail(billboard)">Ver más</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)" *ngIf="billboards.length != 0">
+    <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando más carteleras...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

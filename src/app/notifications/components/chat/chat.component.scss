@@ -1,0 +1,100 @@
+* {
+    font-family: Raleway;
+}
+
+.myToolbar {
+    --background: #010d3d;
+    color: #fff;
+}
+
+.message-input {
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 6px;
+    background: #fff;
+    resize: none;
+    margin-top: 0px;
+    margin-left: .7rem;
+    --padding-start: 8px;
+}
+ 
+.message {
+    padding: 10px !important;
+    border-radius: 22px !important;
+    margin-bottom: 2rem !important;
+    white-space: pre-wrap;
+}
+
+.userName {
+    padding: 0;
+    margin: 0rem 0 0.3rem;
+}
+ 
+.my-message {
+    // background: var(--ion-color-tertiary);
+    background: #6967f8;
+    color: #fff;
+}
+
+.my-message b {
+    font-size: .9rem;
+    color: #fff;
+}
+
+.my-message .time {
+    color: #000;
+}
+ 
+.other-message {
+    // background: var(--ion-color-secondary);
+    background: #ebecfe;
+}
+
+.other-message b {
+    color: #0d3687;
+    font-size: .9rem;
+}
+
+.time {
+    color: #0d3687;
+    float: right;
+    font-size: small;
+    opacity: 60%;
+}
+
+.my-time {
+    position: absolute;
+    color: black;
+    top: 83%;
+    right: 2%;
+    font-weight: bold;
+}
+
+.other-time {
+    position: absolute;
+    color: black;
+    top: 83%;
+    left: 2%;
+    font-weight: bold;
+}
+
+.optionMyMsg {
+    --background: none;
+    --box-shadow: none;
+    position: absolute;
+    top: -.2rem;
+    right: -.6rem;
+    width: 3rem;
+}
+
+.noMsg {
+    font-size: 1.2rem;
+    position: relative;
+    top: .1rem;
+    margin-right: .5rem;
+}
+
+.msg-btn {
+    font-size: .7rem;
+    transform: rotate(-31deg);
+}

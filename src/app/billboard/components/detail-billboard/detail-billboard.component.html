@@ -1,0 +1,66 @@
+<ion-header class="ion-no-border" color="light">
+  <ion-toolbar color="light">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/billboard/list" text="Atrás" class="ion-text-capitalize"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <ion-grid class="resetValuesCss ion-padding-top" *ngIf="isBillboard">
+    <ion-row class="ion-text-center" *ngIf="billboard.images.length > 0">
+      <ion-col>
+        <img [src]="billboard.images[0].image" id="imgBillboard">
+      </ion-col>
+    </ion-row>
+
+    <div class="ion-padding">
+      <ion-row>
+        <ion-col>
+          <h1>{{ billboard.title }}</h1>
+          <p id="publicationDate">
+            <strong class="ion-text-capitalize">Publicada: </strong>{{ billboard.start_date | date }}
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-text [innerHTML]="billboard.description">
+          </ion-text>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="billboard.link">
+        <ion-col>
+          <ion-button class="btnLink" color="secondary" (click)="openLink(billboard.link)">
+            <p *ngIf="billboard.btn_text !== ''">{{billboard.btn_text}}</p>
+            <p *ngIf="billboard.btn_text === ''">Ir a hipervínculo</p>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-toolbar id="postBy" color="light">
+          <ion-text>
+            Publicado por: {{ billboard.author }}
+          </ion-text>
+          <!-- <ion-buttons slot="end">
+            <ion-button>
+              <ion-icon name="share-social-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+            <ion-button>
+              <ion-icon name="heart-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons> -->
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

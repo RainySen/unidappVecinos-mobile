@@ -1,0 +1,54 @@
+* {
+    font-family: Raleway;
+}
+
+// ion-content.background{
+//     --background: linear-gradient(rgba(144,132,238,.7), rgba(144,132,238,.7)),url(../../../../assets/img/welcome.jpg) 0 0/100% 100% no-repeat;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+ion-content.background{
+    --background: rgb(164, 86, 243) !important;
+    --background: -moz-linear-gradient(45deg, rgb(164, 86, 243) 0%, rgb(164, 86, 243) 18%, rgb(121, 99, 246) 100%) !important;
+    --background: -webkit-gradient(left bottom, right top, color-stop(0%, rgb(164, 86, 243)), color-stop(18%, rgb(164, 86, 243)), color-stop(100%, rgb(121, 99, 246))) !important;
+    --background: -webkit-linear-gradient(45deg, rgb(164, 86, 243) 0%, rgb(164, 86, 243) 18%, rgb(121, 99, 246) 100%) !important;
+    --background: -o-linear-gradient(45deg, rgb(164, 86, 243) 0%, rgb(164, 86, 243) 18%, rgb(121, 99, 246) 100%) !important;
+    --background: -ms-linear-gradient(45deg, rgb(164, 86, 243) 0%, rgb(164, 86, 243) 18%, rgb(121, 99, 246) 100%) !important;
+    --background: linear-gradient(45deg, rgb(164, 86, 243) 0%, rgb(164, 86, 243) 18%, rgb(121, 99, 246) 100%) !important;
+}
+
+img {
+    width: 55vw;
+    padding-bottom: 30px;
+}
+
+.vertical-center{
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .rounded{
+    height: 45px;
+    --border-radius: 7px;
+    text-transform: none;
+}
+
+.bt-bottom{
+    margin-top: 80%;
+}
+
+.mt-4{
+    margin-top: 7%;
+}
+
+.background-white{
+    --background: white;
+    --color: #3db5ff;
+}
+
+.background-blue{
+    --background: #3db5ff;
+}

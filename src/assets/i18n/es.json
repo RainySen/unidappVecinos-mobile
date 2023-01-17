@@ -1,0 +1,57 @@
+{
+    "login": {
+        "user": "Usuario",
+        "password": "Contraseña",
+        "recordar": "Recordar",
+        "btnLogin": "Ingresar",
+        "olvidoContrasena": "¿Olvidaste tu contraseña?",
+        "formatoCorreo": "Olvidaste escribir en este campo.",
+
+        "mensaje1Error400": "¿Tienes problemas para ingresar?",
+        "mensaje2Error400": "Nosotros te ayudamos a recordar la contraseña si depronto se te olvidó ;)",
+        "mensaje3Error400": "Si no es el caso, porfa verifica los datos e intenta de nuevo.",
+        "mensaje4Error400": "(turututuru música de suspenso) te queda una sola vida!!!",
+        "mensaje5Error400": "Si no copias bien la info en los campos de usuario o contraseña, te vas directo al mundo del bloqueo O_o",
+
+        "mensaje1Error401": "No puede ingresar al sistema",
+        "mensaje2Error401": "Su cuenta ha sido bloqueada",
+
+        "mensaje1Error403": "¡Houston! Poseemos problemas *_*",
+        "mensaje2Error403": "Por tu seguridad, tuvimos que bloquear tu usuario por intentos fallidos al entrar...",
+        "mensaje3Error403": "pero no te preocupes, comunicate con tu agente y él te ayudará a solucionar este inconveniente ;)",
+
+        "mensaje1Error405": "¡Houston! Poseemos problemas *_*",
+        "mensaje2Error405": "Parece que no estas registrado con nosotros",
+        "mensaje3Error405": "contactanos y empieza a utilizar nuestros servicios",
+
+        "ingresaCuenta": "Ingresa a tu cuenta",
+        "campoRequerido": "Olvidaste escribir en este campo.",
+        "formatoNovalido": "Olvidaste escribir en este campo.",
+
+        "ingresaFacebook": "Ingresa con Facebook",
+        "ingresaGoogle": "Ingresa con Google",
+
+        "noTienesCuenta": "¿No tienes cuenta?",
+        "crearCuenta": " Crea una cuenta"
+    },
+    "establecimiento": {
+        "miembros": "Vecinos",
+        "cartelera": "Cartelera",
+        "noticias": "Noticias",
+        "documentos": "Documentos",
+        "novedades": "Novedades",
+        "pqrs": "PQRS",
+        "establecimiento": "Establecimiento",
+        "cerrarSesion": "Cerrar sesión",
+        "saludo": "Hola ",
+        "cambioEstablecimiento": "Cambiar establecimiento",
+        "bienvenido": "Bienvenido a ",
+        "administrador": "Administrador",
+        "fraseDiviertete": "Diviértete administrando Unidapp ;)",
+        "inicio": "Inicio",
+        "buscar": "Buscar"
+    },
+    "cierreSesion": {
+        "mensajeCierre": "La sesión se cerrará en"
+    }
+}

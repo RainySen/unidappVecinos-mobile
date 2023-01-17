@@ -1,0 +1,57 @@
+{
+    "login": {
+        "user": "User",
+        "password": "Password",
+        "recordar": "Remember",
+        "btnLogin": "Login",
+        "olvidoContrasena": "Did you forget your password?",
+        "formatoCorreo": "Invalid email format",
+
+        "mensaje1Error400": "Having trouble entering?",
+        "mensaje2Error400": "We will help you remember your password if you forgot it soon;)",
+        "mensaje3Error400": "If this is not the case, check the data and try again",
+        "mensaje4Error400": "(suspense music turututuru) you only have one life left!",
+        "mensaje5Error400": "If you do not copy the information correctly in the username or password fields, you will go directly to the world of O_o blocking",
+
+        "mensaje1Error401": "Cannot enter the system",
+        "mensaje2Error401": "Your account has been locked",
+
+        "mensaje1Error403": "Houston! We have problems * _ *",
+        "mensaje2Error403": "For your safety, we had to block your user for unsuccessful login attempts ...",
+        "mensaje3Error403": "but don't worry, contact your agent and they will help you solve this problem;)",
+
+        "mensaje1Error405": "Houston! We have problems * _ *",
+        "mensaje2Error405": "It seems that you are not registered with us",
+        "mensaje3Error405": "contact us and start using our services",
+
+        "ingresaCuenta": "Log in to your account",
+        "campoRequerido": "This field is required",
+        "formatoNovalido": "Invalid email format",
+
+        "ingresaFacebook": "Login with Facebook",
+        "ingresaGoogle": "Login with Google",
+
+        "noTienesCuenta": "You do not have an account?",
+        "crearCuenta": " Create an account"
+    },
+    "establecimiento": {
+        "miembros": "Members",
+        "cartelera": "Billboard",
+        "noticias": "News",
+        "documentos": "Documents",
+        "novedades": "Notices",
+        "pqrs": "Claims and Complaints",
+        "establecimiento": "Establishment",
+        "cerrarSesion": "Logout",
+        "saludo": "Hello ",
+        "cambioEstablecimiento": "Change establishment",
+        "bienvenido": "Welcome to ",
+        "administrador": "Administrator",
+        "fraseDiviertete": "Have fun managing Unidapp ;)",
+        "inicio": "Home",
+        "buscar": "Search"
+    },
+    "cierreSesion": {
+        "mensajeCierre": "This session will be closed in"
+    }
+}

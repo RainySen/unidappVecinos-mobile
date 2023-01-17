@@ -1,0 +1,43 @@
+* {
+  font-family: Raleway;
+}
+
+.resetValuesCss {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  ion-slides {
+    margin: 0 1rem;
+  }
+  
+  #publicationDate {
+    font-size: 5vw;
+    color: #8bd3ff;
+  }
+  
+  #postBy {
+    border-top: 2px groove rgb(197, 189, 189);
+  }
+  
+  ion-buttons ion-button ion-icon {
+    color: #8bd3ff;
+  }
+
+  #imgNews {
+    max-height: 25rem;
+  }
+
+img {
+  border-radius: 8px;
+}
+
+.imgNews {
+  padding: 0 0.4rem;
+  margin: .3rem;
+}
+
+.btnLink {
+  text-transform: none;
+  --border-radius: 5px;
+}

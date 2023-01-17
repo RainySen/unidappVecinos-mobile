@@ -1,0 +1,256 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar class="toolbarH1" #toolbar1>
+    <ion-img id="logo" src="./assets/img/logos-paco/LogoPaco_Color.svg"></ion-img>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" src="assets/img/HMenu-outline.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar class="toolbarH2" #toolbar2>
+    <ion-avatar id="avatarProfile">
+      <img *ngIf="this.neighbourModel.foto" [src]="this.neighbourModel.foto">
+      <img *ngIf="!this.neighbourModel.foto" src="assets/img/noImage.png">
+    </ion-avatar>
+    <ion-label>
+      <h4>Hola! <span id="nameUSer">{{ this.nameUser }}</span></h4>
+      <p>Nos encanta verte de nuevo</p>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true" scrollEvents="true" appHideHeader [toolbar1]="toolbar1" [toolbar2]="toolbar2">
+
+  <ion-grid fixed class="resetValuesCss ion-padding-top" id="firsTitle">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <h3 class="resetValuesCss title">Cartelera</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss subTitle">
+          Mira todo lo que tenemos preparado para ti.
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-slides [options]="slideOpts" *ngIf="isDataBillboard">
+    <ion-slide *ngFor="let item of [1,1,1]">
+      <ion-card >
+        <ion-thumbnail class="thumbnailSkeleton">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row *ngIf="isDataBillboardEmpty">
+    <ion-col class="noBillboard">
+      <h4 class="ion-text-center noBillboards">
+        No te preocupes si no encuentras ninguna publicación en esta cartelera
+      </h4>
+      <h6 class="ion-text-center">
+        Podemos usar este tiempo valioso para meditar, amar a todos los seres vivos o verte los capitulos que te faltan de la serie que te gusta.
+      </h6>
+      <ion-img src="./assets/img/noBillboards.png"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="oneBillboard">
+    <ion-col>
+      <ion-card *ngFor="let billboard of finalBillboards; let i = index" class="cardBillboardOne" (click)="viewDetailBillboard(billboard)">
+        <ion-img *ngIf="billboard.images.length > 0" class="imgBillboard" [src]="billboard.images[i].image"></ion-img>
+        <ion-img *ngIf="billboard.images.length == 0" class="imgBillboard" src="./assets/img/no_image.jpg"></ion-img>
+        <ion-label class="dateBillboardOne">
+          {{ billboard.end_date | date: 'EEEE, d MMM'}}
+        </ion-label>
+        <ion-label class="titleBillboardOne">
+          {{ billboard.title | truncate : limitTitle }}
+        </ion-label>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-slides [options]="slideOptsBillboard" *ngIf="!isDataBillboard && !oneBillboard">
+
+    <ion-slide *ngFor="let billboard of finalBillboards">
+      <ion-card class="cardBillboard" (click)="viewDetailBillboard(billboard)">
+        <ion-img *ngIf="billboard.images.length > 0" class="imgBillboard" [src]="billboard.images[0].image"></ion-img>
+        <ion-img *ngIf="billboard.images.length == 0" class="imgBillboard" src="./assets/img/no_image.jpg"></ion-img>
+        <ion-label
+        [ngClass]="{'dateBillboard': this.finalBillboards.length >= 1, 'dateBillboardOne': this.finalBillboards.length == 1}">
+          {{ billboard.end_date | date: 'EEEE, d MMM'}}
+        </ion-label>
+        <ion-label
+        [ngClass]="{'titleBillboard': this.finalBillboards.length >= 1, 'titleBillboardOne': this.finalBillboards.length == 1}">
+          {{ billboard.title | truncate : limitTitlel}}
+        </ion-label>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-grid fixed class="resetValuesCss ion-padding-top" *ngIf="!isDataBillboardEmpty">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss titleNavigate ion-text-end" routerLink="/tabs/billboard/list">Ver la cartelera completa</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid fixed class="resetValuesCss gridNews">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <h3 class="resetValuesCss title">Noticias</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss subTitle">
+          Aquí encontrarás información de tu interés.
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-slides [options]="slideOpts" *ngIf="isDataNews">
+    <ion-slide *ngFor="let item of [1,1,1]">
+      <ion-card >
+        <ion-thumbnail class="thumbnailSkeleton">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row *ngIf="isDataNewsEmpty">
+    <ion-col class="noNewsPrincipal">
+      <h4 class="ion-text-center noNews">
+        *_* OMG! Será que están almorzando nuestros reporteros, que no tenemos noticias?
+      </h4>
+      <h6 class="ion-text-center">
+        jajajaja Falso de toda falsedad, están trabajando sin descanso, para poder mostrarte dentro de poco información de tu interés
+      </h6>
+      <ion-img src="./assets/img/noNews.png"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="oneNews">
+    <ion-col>
+      <ion-card class="cardNewsOne firstCardNews" (click)="viewDetailNews(news)" *ngFor="let news of finalnews">
+      <div class="endDateOne">
+        <p class="endDateDayOne">
+          {{ news.end_date | date: 'dd'}}
+        </p>
+        <p class="endDateMonthOne">
+          {{ news.end_date | date: 'MMM'}}
+        </p>
+      </div>
+      <ion-card-title class="titleNews">{{ news.title | truncate : limit : true}}</ion-card-title>
+      <!-- <p class="descriptionNewsOne">
+        {{news.description | truncate : limit  | removeTagHtml}}
+      </p> -->
+    </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-slides [options]="slideOptsNews" *ngIf="!isDataNews && !oneNews">
+    <ion-slide *ngFor="let news of finalnews; let i = index">
+      <ion-card class="cardNews" (click)="viewDetailNews(news)"
+        [ngClass]="{'firstCardNews': i == 0, 'secondCardNews': i == 1, 'thirdCardNews': i == 2}">
+        <div class="endDate">
+          <p class="endDateDay">
+            {{ news.start_date | date: 'dd'}}
+          </p>
+          <p class="endDateMonth">
+            {{ news.start_date | date: 'MMM'}}
+          </p>
+        </div>
+        <ion-card-title class="titleNews">{{ news.title | truncate : limit : true}}</ion-card-title>
+        <!-- <p class="descriptionNews">
+          {{news.description | truncate : limit}}
+        </p> -->
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+    <ion-grid fixed class="resetValuesCss ion-padding-top" *ngIf="!isDataNewsEmpty">
+      <ion-row class="resetValuesCss">
+        <ion-col class="resetValuesCss">
+          <p class="resetValuesCss titleNavigate ion-text-end" routerLink="/tabs/news/list">Ver todas las noticias</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- <ion-grid fixed class="resetValuesCss">
+      <ion-row class="resetValuesCss">
+        <ion-col class="resetValuesCss">
+          <h3 class="resetValuesCss title">Contáctanos</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row class="resetValuesCss">
+        <ion-col class="resetValuesCss">
+          <p class="resetValuesCss subTitle">
+            Si tienes alguna inquietud a cerca de nuestra app, puedes contactarnos al siguiente numero
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+  
+    <!-- <ion-list>
+      <ion-item *ngFor="let item of [1]">
+        <ion-avatar slot="start">
+          <img src="/assets/img/Foto2.png">
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <b>Martin Elias:</b> +57 303-303-3033
+          </h3>
+        </ion-label>
+      </ion-item>
+    </ion-list> -->
+
+  <!-- <ion-grid fixed class="resetValuesCss">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <h3 class="resetValuesCss title">Notificaciones</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss subTitle">
+          Tienes <b id="quantityNot">6</b> mensajes si leer
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item *ngFor="let item of [1,1,1]">
+      <ion-avatar slot="start">
+        <img src="/assets/img/Foto2.png">
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <b>Admin</b> te invito a un evento
+        </h3>
+        <p>Hace 15 horas</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid fixed class="resetValuesCss ion-padding-top">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss titleNavigate ion-text-end" id="txtNotification">Ver todas mis notificaciones</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+</ion-content>

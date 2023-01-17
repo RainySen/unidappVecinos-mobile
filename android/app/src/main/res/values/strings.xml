@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PACO</string>
+    <string name="title_activity_main">PACO</string>
+    <string name="package_name">com.desarrolloeficaz.paco</string>
+    <string name="custom_url_scheme">com.desarrolloeficaz.paco</string>
+</resources>

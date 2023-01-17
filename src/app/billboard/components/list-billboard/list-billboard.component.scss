@@ -1,0 +1,148 @@
+* {
+  font-family: Raleway;
+}
+
+ion-header {
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.resetValuesCss {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+#btnReserve {
+  position: fixed;
+  bottom: 4px;
+  left: 9px;
+  border-radius: 5px;
+}
+
+#firsTitle {
+  margin-top: 1rem !important;
+}
+
+#firsTitle h3 {
+  font-weight: bold;
+}
+
+.title {
+  margin-left: 1rem !important;
+}
+
+.subTitle {
+  font-size: 1rem !important;
+  margin-top: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+#titleEvents {
+  margin-top: -1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#titleEvents p {
+  font-weight: bold;
+  font-size: 1rem !important;
+}
+
+.cardsEvent {
+  margin-top: -1.5rem;
+}
+
+.imgBillboard {
+  max-height: 10rem !important;
+}
+
+ion-card {
+  margin-bottom: 0;
+}
+
+ion-card-header {
+  padding: 0;
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+}
+
+ion-card-subtitle {
+  color: #48b5fb;
+  margin-right: 1rem !important;
+  margin-bottom: 1rem !important;
+  font-weight: bold;
+}
+
+ion-card-content {
+  margin-top: 1rem;
+}
+
+.iconShare {
+  position: absolute;
+  top: 5px;
+  right: 9px;
+  opacity: 0.6;
+  color: #ffffff;
+}
+
+.iconShare ion-icon {
+  color: #ffffff;
+}
+
+.iconHeart {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  opacity: 0.6;
+  color: #ffffff;
+}
+
+#thumbnailSkeleton {
+  position: relative;
+  width: 15.2rem;
+  height: 7rem;
+}
+
+.descriptionNews {
+  position: absolute;
+  top: 130px;
+  left: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  width: 300px;
+}
+
+.titleNavigate {
+  color: #48b5fb;
+  text-decoration: underline #48b5fb;
+  font-weight: bold;
+}
+
+.noBillboards {
+  color: #48b5fb;
+}
+
+.noBillboard {
+  padding-left: .9rem;
+  padding-right: .9rem;
+}
+
+.btnLink {
+  text-transform: capitalize;
+  --border-radius: 5px;
+}
+
+.imgBillboard {
+  width: 100%;
+  height: auto;
+}
+
+@supports(object-fit: cover){
+    .imgBillboard {
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}

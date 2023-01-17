@@ -1,0 +1,73 @@
+<ion-content class="fondo">
+
+      <form  [formGroup]="credenciales" (ngSubmit)="login()">
+        <ion-grid fixed>
+
+          <ion-row class="mt-logo">
+            <ion-col>
+              <img src="./assets/img/logos-paco/LogoPaco_Blanco_364.svg">
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="mb-3">
+            <ion-col>
+              <div class="ion-text-start text-white">
+                <h1 class="ion-text-start text-bold">Bienvenido :D</h1>
+                <p class="sub-text">Inicia tu sesión para que puedas continuar</p>
+                
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+
+              <ion-list class="fondo-t">
+                <p class="align-left text-white mb-0">Correo electrónico</p>
+                <ion-item class="rounded" lines="none">
+                  <ion-input 
+                    formControlName="username" type="text" name="user" placeholder="Ingrese correo electrónico">
+                  </ion-input>
+                </ion-item>
+                <div class="errorsInput" *ngIf="this.credenciales.get('username').hasError('required') && this.credenciales.get('username').touched">
+                  * Campo correo electrónico es requerido
+                </div>
+                <div class="errorsInput" *ngIf="this.credenciales.get('username').hasError('pattern') && this.credenciales.get('username').touched">
+                  * Ingrese un correo válido <br>
+                  * El correo no puede contener caracteres especiales
+                </div>
+
+                <div class="mt-4"></div>
+
+                <p class="align-left text-white mb-0">Contraseña</p>
+                <ion-item class="rounded" lines="none">
+                  <ion-input 
+                    formControlName="password" name="password" [type]="inputType" placeholder="Ingrese contraseña">
+                  </ion-input>
+                  
+                  <ion-icon id="viewPassword"  [name]="(inputType == 'password') ? 'eye' : 'eye-off'" slot="end" (click)="viewPassword()"></ion-icon>
+                </ion-item>
+                <ion-label class="text-secundario olvidoContra" (click)="goRestorePassword()">¿Olvidaste tu contraseña?</ion-label>
+                <div class="errorsInput" *ngIf="this.credenciales.get('password').hasError('required') && this.credenciales.get('password').touched">
+                  * Campo contraseña es requerido
+                </div>
+
+              </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="mt-4">
+            <ion-col>
+              <ion-button type="submit" class="rounded" color="secondary" [disabled]="this.credenciales.invalid" expand="block">
+                Inicia tu sesión
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          
+          <!-- <ion-label class="text-footer">¿No tienes cuenta? <a href="#" class="text-footer">Crea ya la tuya</a></ion-label> -->
+
+        </ion-grid>
+      </form>
+
+</ion-content>
+

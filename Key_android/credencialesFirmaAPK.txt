@@ -1,0 +1,14 @@
+password: %DesarrolloDE2020*
+password: %DesarrolloDE2020*
+
+alias: GraffVR
+password: %DesarrolloDE2020*
+password: %DesarrolloDE2020*
+validity: 50
+
+first and last name: juan camilo aguilar
+organizational unit: Desarrollo Eficaz
+organization: Desarrollo Eficaz
+city: Medellin
+State: Antioquia
+country code: 57

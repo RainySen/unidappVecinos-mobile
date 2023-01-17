@@ -1,0 +1,136 @@
+ion-slides {
+    height: 100%;
+}
+
+ion-slides ion-slide:nth-child(1) {
+    height: 100%;
+    overflow-y: auto;
+}
+
+ion-slides ion-slide:nth-child(2) {
+    height: 100%;
+    overflow-y: auto;
+}
+
+ion-header {
+    -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+#propertyNeig,
+#dataNeig {
+    height: 100%;
+}
+
+.title {
+    text-transform: none;
+    font-size: 4vw;
+}
+
+ion-item {
+    margin-top: 1rem;
+}
+
+ion-label.dataNeigh {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.titleInputs {
+    color: #000d3d !important;
+}
+
+.inputs {
+    border-bottom: 1px solid black;
+    padding: 0.5rem 1rem !important;
+}
+
+.selectdAndDateTime {
+    border: solid 1px black;
+    padding: 1rem;
+    height: 3rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.uploadPicture {
+    text-transform: capitalize;
+    --border-radius: 6px;
+}
+
+.saveData {
+    text-transform: capitalize;
+    --border-radius: 6px;
+    width: 115px;
+    height: 37px;
+    --box-shadow: none;
+}
+
+.saveData button,
+.button-disabled button {
+    background: #2c4192 !important;
+    --border-radius: 6px;
+}
+
+.btnChangeForm {
+    text-transform: capitalize;
+    --border-radius: 6px;
+    --background: #fff;
+    --color: #3db5ff;
+    width: 115px;
+    height: 37px;
+    border: 1px solid #3db5ff;
+    border-radius: 6px;
+    --box-shadow: none;
+}
+
+.top-30 {
+    margin-top: 30px;
+}
+
+.img-avatar {
+    width: 40vw;
+    height: auto;
+    border-radius: 50%;
+}
+
+@supports (object-fit: cover) {
+    .img-avatar {
+        height: 40vw;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.titleArray {
+    margin-top: 2rem;
+    // margin-bottom: -1rem;
+    text-align: left;
+    // margin-left: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.itemDivider {
+    color: #000d3d !important;
+    margin-top: 12px !important;
+    font-weight: bold !important;
+}
+
+.btnAddItem {
+    margin-right: 0.7rem;
+    width: 39px;
+    height: 39px;
+    --border-radius: 12px;
+}
+
+.btnTrash {
+    width: 39px;
+    height: 39px;
+    --border-radius: 12px;
+}

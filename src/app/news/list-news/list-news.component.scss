@@ -1,0 +1,242 @@
+* {
+  font-family: Raleway;
+}
+
+ion-header {
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.resetValuesCss {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+#btnReserve {
+  position: fixed;
+  bottom: 4px;
+  left: 9px;
+  border-radius: 5px;
+}
+
+#firsTitle {
+  margin-top: 1rem !important;
+}
+
+#firsTitle h3 {
+  font-weight: bold;
+}
+
+.title {
+  margin-left: 1rem !important;
+  font-weight: 500;
+}
+
+.subTitle {
+  font-size: 1rem !important;
+  margin-top: 8px !important;
+  margin-bottom: 10px !important;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
+
+#titleEvents {
+  margin-top: -1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#titleEvents p {
+  font-weight: bold;
+  font-size: 1rem !important;
+}
+
+.cardsEvent {
+  margin-top: -1.5rem;
+}
+
+.imgBillboard {
+  max-height: 10rem !important;
+}
+
+ion-card {
+  margin-bottom: 0;
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+}
+
+ion-card-subtitle {
+  color: #48b5fb;
+  margin-right: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.iconShare {
+  position: fixed;
+  top: 5px;
+  right: 9px;
+  opacity: 0.6;
+  color: #ffffff;
+}
+
+.iconShare ion-icon {
+  color: #ffffff;
+}
+
+.iconHeart {
+  position: fixed;
+  top: 5px;
+  right: 60px;
+  opacity: 0.6;
+  color: #ffffff;
+}
+
+#thumbnailSkeleton {
+  position: relative;
+  width: 15.2rem;
+  height: 7rem;
+}
+
+.shortText {
+  width: 230px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.titleNavigate {
+  text-decoration: underline #ffffff;
+  font-weight: bold;
+  position: absolute;
+  top: 264px;
+  left: 10px;
+  color: white;
+}
+
+.cardNews {
+  height: 20rem;
+}
+
+.cardNews:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 154, 228, 0.9);
+}
+
+.titleNews {
+  position: absolute;
+  top: 88px;
+  left: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  width: 18rem;
+}
+
+.titleNewsLong {
+  top: 83px;
+}
+
+.subtitleNews {
+  position: absolute;
+  top: 130px;
+  left: 10px;
+  color: #ffffff;
+}
+
+.descriptionNews {
+  position: absolute;
+  top: 140px;
+  left: 10px;
+  color: #ffffff;
+  width: 300px;
+  margin: 1rem 0;
+}
+
+.limitDescriptionNews {
+  width: 300px;
+}
+
+.endDate {
+  position: absolute;
+  background: rgba(117, 201, 251, 0.5);
+  top: 0;
+  right: 0;
+  width: 5rem;
+  height: 5rem;
+}
+
+.endDateDay {
+  position: relative;
+  top: 0px;
+  right: -19px;
+  font-size: 2.3rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.endDateMonth {
+  position: relative;
+  top: -4px;
+  right: -20px;
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.noNews {
+  color: #48b5fb;
+}
+
+.firstCardNews:before {
+  background-color: #ffffff;
+}
+
+.firstCardNews .titleNews,
+.firstCardNews .descriptionNews,
+.firstCardNews .titleNavigate,
+.firstCardNews .endDate .endDateDay,
+.firstCardNews .endDate .endDateMonth {
+  color: #000d3d;
+}
+
+.firstCardNews .titleNavigate {
+  text-decoration: underline #000d3d;
+}
+
+.firstCardNews .subtitleNews {
+  color: #3db5ff;
+}
+
+.secondCardNews:before {
+  background-color: #3db5ff;
+}
+
+.secondCardNews .titleNews,
+.secondCardNews .descriptionNews {
+  color: #ffffff;
+}
+
+.thirdCardNews:before {
+  background-color: #000d3d;
+}
+
+.thirdCardNews .titleNews,
+.thirdCardNews .subtitleNews {
+  color: #3db5ff;
+}
+
+.thirdCardNews .descriptionNews {
+  color: #ffffff;
+}
+
+.noNewsPrincipal {
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+}

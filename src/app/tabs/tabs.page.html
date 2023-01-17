@@ -1,0 +1,28 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" class="tabs">
+
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <!-- <ion-tab-button (click)="presentPopover($event)">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-label>Mis notificaciones</ion-label>
+      <ion-badge id=quantityNotifications>99+</ion-badge>
+    </ion-tab-button> -->
+
+    <ion-tab-button tab="notification">
+      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+      <ion-label>Portería</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="neighbour" (click)="updateData()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Mi perfil</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>

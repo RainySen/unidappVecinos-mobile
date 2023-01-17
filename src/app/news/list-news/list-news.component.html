@@ -1,0 +1,131 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home" text="Atrás" class="ion-text-capitalize"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-capitalize">Noticias</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" src="assets/img/HMenu-outline.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid fixed class="resetValuesCss ion-padding-top" id="firsTitle" *ngIf="isData">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <h3 class="resetValuesCss title">
+          <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+        </h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss title subTitle">
+          <ion-skeleton-text animated style="width: 73%"></ion-skeleton-text>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of [1,1,1,1,1]">
+      <ion-col>
+        <ion-card>
+          <ion-card-header class="ion-padding ion-text-center">
+            <ion-thumbnail id="thumbnailSkeleton">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-card-title>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </ion-card-title>
+            <ion-card-subtitle>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </ion-card-subtitle>
+            <p>
+              <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row *ngIf="idDataNews">
+    <ion-col class="noNewsPrincipal">
+      <h4 class="ion-text-center noNews">
+        *_* OMG! Será que están almorzando nuestros reporteros, que no tenemos noticias?
+      </h4>
+      <h6 class="ion-text-center">
+        jajajaja Falso de toda falsedad, están trabajando sin descanso, para poder mostrarte dentro de poco información
+        de tu interés
+      </h6>
+      <ion-img src="./assets/img/noNews.png"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-grid fixed class="resetValuesCss ion-padding-top" id="firsTitle" *ngIf="news.length != 0">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <h1 class="resetValuesCss title">Noticias</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss subTitle">
+          Esto es tan importante que si no se enteran, se los lleva el coco
+        </p>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngFor="let news of finalNews" class="ion-padding-top animated fadeIn fast">
+      <ion-col class="cardsEvent">
+        <ion-card class="cardNews"
+          [ngClass]="{'firstCardNews': news.color == 'Blanco', 'secondCardNews': news.color == 'Azul', 'thirdCardNews': news.color == 'Azul_Oscuro'}">
+          <!-- <ion-img [src]="billboard.image" class="imgNews"></ion-img> -->
+          <div class="endDate">
+            <p class="endDateDay">
+              {{ news.start_date | date: 'dd'}}
+            </p>
+            <p class="endDateMonth">
+              {{ news.start_date | date: 'MMM'}}
+            </p>
+          </div>
+          <ion-card-title class="titleNews" [ngClass]="{'titleNewsLong': news.title.length >= 32}">
+            {{ news.title | truncate : limitTitle }}
+          </ion-card-title>
+          <ion-card-subtitle class="subtitleNews">
+            <strong class="ion-text-capitalize">Autor: </strong>{{ news.author }}
+          </ion-card-subtitle>
+          <p class="descriptionNews">
+            {{news.description | truncate : limitDesc : true | removeTagHtml}}
+          </p>
+          <p class="resetValuesCss titleNavigate" (click)="viewDetail(news)">Ver más</p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)" *ngIf="news.length != 0">
+    <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando más noticias...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,31 @@
+* {
+  font-family: Raleway;
+}
+
+.resetValuesCss {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+#publicationDate {
+  font-size: 5vw;
+  color: #48b5fb;
+}
+
+#postBy {
+  border-top: 2px groove rgb(197, 189, 189);
+}
+
+ion-buttons ion-button ion-icon {
+  color: #48b5fb;
+}
+
+#imgBillboard {
+  max-height: 25rem;
+  border-radius: 8px;
+}
+
+.btnLink {
+  text-transform: none;
+  --border-radius: 5px;
+}

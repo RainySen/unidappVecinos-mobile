@@ -1,0 +1,27 @@
+.tabs {
+    height: 4.4rem !important;
+    --background: rgb(104, 104, 239);
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+ion-tab-button {
+    ion-icon {
+        color: rgb(73, 77, 185);
+    }
+    ion-label {
+        visibility: hidden;
+    }
+}
+
+#quantityNotifications {
+    --background: rgb(64, 174, 253) !important;
+    width: 2rem;
+    height: 1rem;
+    font-size: .7rem;
+    margin-left: -6px !important;
+    margin-bottom: -5px !important;
+    --background: rgb(64, 174, 253) !important;
+    font-size: .7rem;
+    margin-left: -.3rem !important;
+}

@@ -1,0 +1,32 @@
+<ion-content>
+
+  <ion-grid fixed class="resetValuesCss">
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <h3 class="resetValuesCss title">Notificaciones</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="resetValuesCss">
+      <ion-col class="resetValuesCss">
+        <p class="resetValuesCss title subTitle">
+          Tienes <b id="quantityNot">6</b> mensajes si leer
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item *ngFor="let item of [1,1,1]">
+      <ion-avatar slot="start">
+        <img src="/assets/img/Foto2.png">
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <b>Admin</b> te invito a un evento
+        </h3>
+        <p>Hace 15 horas</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

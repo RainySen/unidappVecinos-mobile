@@ -1,0 +1,145 @@
+<ion-menu side="start" type="push" menuId="principalMenu" contentId="main" (ionWillOpen)="setUserLoggedIn()">
+
+  <ion-header>
+    <ion-toolbar id="headerMenu">
+      <div id="toolbarHeader">
+        <ion-avatar id="avatarProfile">
+          <img *ngIf="this.establishmentPicture" [src]="this.establishmentPicture">
+          <img *ngIf="!this.establishmentPicture" src="assets/img/noImage.png">
+        </ion-avatar>
+        <ion-label id="textProfile">
+          <h4 id="nameProfile" *ngIf="this.establishmentName">{{ this.establishmentName }}</h4>
+        </ion-label>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list id="menuList">
+
+      <ion-menu-toggle>
+        <ion-item lines="none" routerLink="/tabs/neighbour" routerLinkActive="active-link" detail="false"
+          (click)="updateData()">
+          <ion-label>
+            Actualizar datos
+          </ion-label>
+          <ion-icon class="active-icon" name="pencil-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none" routerLink="/tabs/billboard/list" routerLinkActive="active-link" detail="false">
+          <ion-label>
+            Cartelera
+          </ion-label>
+          <ion-icon class="active-icon" name="film-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none" routerLink="/tabs/news/list" routerLinkActive="active-link" detail="false">
+          <ion-label>
+            Noticias
+          </ion-label>
+          <ion-icon class="active-icon" name="star-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none" routerLink="/tabs/notification" routerLinkActive="active-link" detail="false">
+          <ion-label>
+            Mensajes
+          </ion-label>
+          <ion-icon class="active-icon" name="chatbubble-ellipses-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none" routerLink="/neighbour/change-password" routerLinkActive="active-link" detail="false">
+          <ion-label>
+            Cambiar contraseña
+          </ion-label>
+          <ion-icon class="active-icon" name="key-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none" detail="false" (click)="termsConditions()">
+          <ion-label>
+            Términos y condiciones
+          </ion-label>
+          <ion-icon class="active-icon" name="shield-checkmark-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <!-- <ion-menu-toggle>
+        <ion-item lines="none" routerLink="/tabs/notification" routerLinkActive="active-link" detail="false">
+          <ion-label>
+            Notificaciones
+          </ion-label>
+          <ion-icon class="active-icon" name="notifications-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none">
+          <ion-label>
+            Documentos
+          </ion-label>
+          <ion-icon class="active-icon" name="document-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none">
+          <ion-label>
+            Invitar amigos
+          </ion-label>
+          <ion-icon class="active-icon" name="people-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none">
+          <ion-label>
+            PQRS
+          </ion-label>
+          <ion-icon class="active-icon" name="headset-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none">
+          <ion-label>
+            Ayuda
+          </ion-label>
+          <ion-icon class="active-icon" name="information-circle-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item lines="none">
+          <ion-label>
+            Términos y condiciones
+          </ion-label>
+          <ion-icon class="active-icon" name="shield-checkmark-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle> -->
+
+      <ion-menu-toggle>
+        <ion-item lines="none" (click)="logOut()">
+          <ion-label>
+            Cerrar sesión
+          </ion-label>
+          <ion-icon class="active-icon" name="log-out-outline" size="small" slot="start"></ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
+
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-img id="logo" src="./assets/img/logos-paco/LogoPaco_Blanco.svg"></ion-img>
+    </ion-toolbar>
+  </ion-footer>
+</ion-menu>
